@@ -1,0 +1,185 @@
+/* Component-specific styles */
+
+/* Sidebar */
+.sidebar {
+  @apply fixed inset-y-0 left-0 z-50 w-80 transform transition-transform duration-300 ease-in-out;
+}
+
+.sidebar-open {
+  @apply translate-x-0;
+}
+
+.sidebar-closed {
+  @apply -translate-x-full;
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    @apply translate-x-0 static inset-0;
+  }
+}
+
+/* Message bubbles */
+.message-bubble {
+  @apply px-4 py-3 rounded-2xl shadow-sm max-w-full;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.message-bubble-user {
+  @apply bg-gradient-to-r from-blue-500 to-purple-600 text-white ml-auto;
+}
+
+.message-bubble-assistant {
+  @apply bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 border border-gray-200 dark:border-slate-700;
+}
+
+.message-bubble-error {
+  @apply bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-400 border border-red-200 dark:border-red-800;
+}
+
+/* Input area */
+.input-area {
+  @apply w-full px-4 py-3 rounded-2xl border resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all;
+}
+
+.input-area-light {
+  @apply bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-500;
+}
+
+.input-area-dark {
+  @apply bg-slate-700 border-slate-600 text-white placeholder-slate-400;
+}
+
+/* Buttons */
+.btn {
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transform hover:scale-105 focus:ring-blue-500;
+}
+
+.btn-secondary {
+  @apply bg-gray-100 hover:bg-gray-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-gray-900 dark:text-white focus:ring-gray-500 dark:focus:ring-slate-500;
+}
+
+.btn-ghost {
+  @apply hover:bg-gray-100 dark:hover:bg-slate-700 text-gray-600 dark:text-slate-300 focus:ring-gray-500 dark:focus:ring-slate-500;
+}
+
+/* Cards */
+.card {
+  @apply bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm;
+}
+
+.card-hover {
+  @apply hover:shadow-md dark:hover:shadow-slate-900/20 transition-shadow duration-200;
+}
+
+/* Weather icons */
+.weather-icon {
+  @apply w-5 h-5 transition-colors duration-200;
+}
+
+.weather-icon-sun {
+  @apply text-yellow-500;
+}
+
+.weather-icon-cloud {
+  @apply text-gray-500 dark:text-slate-400;
+}
+
+.weather-icon-rain {
+  @apply text-blue-500;
+}
+
+.weather-icon-storm {
+  @apply text-purple-500;
+}
+
+.weather-icon-snow {
+  @apply text-blue-200;
+}
+
+/* Loading animations */
+.loading-dots {
+  @apply flex space-x-1;
+}
+
+.loading-dot {
+  @apply w-2 h-2 bg-blue-500 rounded-full animate-bounce;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.loading-dot:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+/* Typing indicator */
+.typing-cursor {
+  @apply inline-block ml-1 animate-pulse;
+}
+
+/* Avatar */
+.avatar {
+  @apply w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0;
+}
+
+.avatar-user {
+  @apply bg-gradient-to-r from-purple-500 to-pink-500;
+}
+
+.avatar-assistant {
+  @apply bg-gradient-to-r from-blue-500 to-purple-600;
+}
+
+.avatar-error {
+  @apply bg-red-100 dark:bg-red-900/20;
+}
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  .message-bubble {
+    @apply px-3 py-2 text-sm;
+  }
+  
+  .sidebar {
+    @apply w-full;
+  }
+}
+
+/* Hover effects */
+.hover-lift {
+  @apply transform transition-transform duration-200 hover:scale-105;
+}
+
+.hover-glow {
+  @apply transition-shadow duration-200 hover:shadow-lg hover:shadow-blue-500/25;
+}
+
+/* Status indicators */
+.status-online {
+  @apply w-2 h-2 bg-green-500 rounded-full animate-pulse;
+}
+
+.status-offline {
+  @apply w-2 h-2 bg-gray-400 rounded-full;
+}
+
+/* Backdrop overlay */
+.backdrop-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-light {
+  background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 50%, #faf5ff 100%);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(135deg, #0f172a 0%, #581c87 50%, #0f172a 100%);
+}
